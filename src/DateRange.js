@@ -189,6 +189,7 @@ export default class DateRange extends Component {
         </View>
         {this.state.selectState === "monthAndDate" && (
           <View style={styles.calendar}>
+            {!this.props.currentMonthOnly ?
             <View style={styles.headActionContainer}>
               <TouchableOpacity onPress={this.previousMonth}>
                 <Text
@@ -217,7 +218,7 @@ export default class DateRange extends Component {
                   {">"}
                 </Text>
               </TouchableOpacity>
-            </View>
+            </View> : null}
             <Month
               mode={this.props.mode}
               date={this.props.date}
